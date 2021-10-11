@@ -1,3 +1,3 @@
-## Over_Loop
+# Over_Loop
 
-# This is our tower defense programming project
+## Simple Tower Defense game for our info project
