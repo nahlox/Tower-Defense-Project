@@ -1,5 +1,4 @@
 # coding=System
-from Tour import *
 
 class Joueur(object):
 
@@ -28,9 +27,13 @@ class Joueur(object):
 
   Ennemis  (private)
 
+   
+
+  name  (private)
+
   """
 
-  def __init__(self, money = 100, life = 30):
+  def __init__(self, money_ = 100, life_ = 30):
     """
      
 
@@ -40,7 +43,7 @@ class Joueur(object):
     @author
     """
     self.money = money
-    self.life = life
+    seft.life = life
 
 
   def get_Money(self):
@@ -87,7 +90,7 @@ class Joueur(object):
     return self.money
 
 
-  def add_Life(self, bonus = 0):
+  def add_Life(self, int = 0):
     """
      
 
@@ -108,6 +111,26 @@ class Joueur(object):
     """
     self.life = self.life - damage
 
+
+  def create_tower(self, posX, posY):
+    """
+     
+
+    @param float posX : 
+    @param float posY : 
+    @return  :
+    @author
+    """
+    pass
+
+  def next_Ennemi(self):
+    """
+     
+
+    @return  :
+    @author
+    """
+    pass
 
 
 

@@ -1,5 +1,4 @@
 # coding=System
-from Projectile import *
 
 class Tour(object):
 
@@ -50,7 +49,7 @@ class Tour(object):
 
   """
 
-  def __init__(self, damage = 1, name = "Untitled", frequency = 1, range = 1, posX = 0, posY = 0, price = 5):
+  def __init__(self, damage = 1, name = "", frequency = 1, range = 1, posX = 0, posY = 0, price = 5):
     """
      
 
@@ -106,11 +105,11 @@ class Tour(object):
     self.name = name
 
 
-  def set_Frequency_(self, frequency = 1):
+  def set_frequency(self, frequency = 1):
     """
      
 
-    @param float frequency_ : 
+    @param float frequency : 
     @return  :
     @author
     """
@@ -128,7 +127,7 @@ class Tour(object):
     self.damage = damage
 
 
-  def get_Frequency_(self):
+  def get_frequency(self):
     """
      
 
@@ -209,6 +208,16 @@ class Tour(object):
     """
     return self.posY
 
+
+  def send_Projectile(self, id_Ennemi):
+    """
+     
+
+    @param int id_Ennemi : 
+    @return  :
+    @author
+    """
+    pass
 
 
 
