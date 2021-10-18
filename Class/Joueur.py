@@ -17,11 +17,6 @@ class Joueur(object):
 
    
 
-  money  (private)
-
-   
-
-  Tours  (private)
 
    
 
