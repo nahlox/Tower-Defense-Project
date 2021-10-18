@@ -1,32 +1,135 @@
+# coding=System
+
 class Projectile(object):
-    def __init__(self, opacity = 0, posX = 0, posY = 0, pointA = 0, pointB = 0):
-        self.opacity = opacity
-        self.posX = posX
-        self.posY = posY
-        self.pointA = pointA
-        self.pointB = pointB
 
-    def get_posX(self):
-        return self.posX
+  """
+   
 
-    def get_posY(self):
-        return self.posY
+  :version:
+  :author:
+  """
 
-    def get_velocity(self):
-        #Trouver la formule
-        pass
-        
-    def get_opacity(self):
-        return self.opacity
+  """ ATTRIBUTES
 
-    def get_pointA(self):
-        return self.pointA
+   
 
-    def get_pointB(self):
-        return self.pointB
+  velocity  (private)
 
-    def set_Direction(self, direction):
-        if not direction:
-            pass
-        #Trouver la formule
-        pass
+   
+
+  opacity  (private)
+
+   
+
+  posX  (private)
+
+   
+
+  posY  (private)
+
+   projectile direction :
+   y=Ax+B
+
+  PointA  (private)
+
+   projectile direction :
+   y=Ax+B
+
+  PointB  (private)
+
+  """
+
+  def __init__(self, opacity = 0, posX = 0, posY = 0, pointA = 0, pointB = 0, velocity = 50):
+    """
+     
+
+    @param float opacity : 
+    @param float posX : 
+    @param float posY : 
+    @param float pointA : 
+    @param float pointB : 
+    @param int velocity : 
+    @return  :
+    @author
+    """
+    self.opacity = opacity
+    self.posX = posX
+    self.posY = posY
+    self.pointA = pointA
+    self.pointB = pointB
+    self.velocity = velocity
+
+
+  def get_posX(self):
+    """
+     
+
+    @return  :
+    @author
+    """
+    return self.posX
+
+
+  def get_posY(self):
+    """
+     
+
+    @return  :
+    @author
+    """
+    return self.posY
+
+
+  def get_velocity(self):
+    """
+     
+
+    @return  :
+    @author
+    """
+    return self.velocity
+
+
+  def set_direction(self, direction):
+    """
+     NOT CORRECT
+
+    @param float direction : 
+    @return  :
+    @author
+    """
+    self.direction = direction
+
+
+  def get_opacity(self):
+    """
+     
+
+    @return  :
+    @author
+    """
+    return self.opacity
+
+
+  def get_pointA(self):
+    """
+     
+
+    @return  :
+    @author
+    """
+    return self.pointA
+
+
+  def get_pointB(self):
+    """
+     
+
+    @return  :
+    @author
+    """
+    return self.pointB
+
+
+
+

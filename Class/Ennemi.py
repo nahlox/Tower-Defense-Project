@@ -1,47 +1,137 @@
+# coding=System
+
 class Ennemi(object):
-    def __init__(self, life = 100, attack = 1, speed = 10, posX = 0, posY = 0, prize = 1):
-        self.life = life
-        self.attack = attack
-        self.speed = speed
-        self.posX = posX
-        self.posY = posY
-        self.prize = prize
 
-    def get_Life(self):
-        return self.life
-    
-    def get_Attack(self):
-        return self.attack
+  """
+   
 
-    def get_Speed(self):
-        return self.speed
+  :version:
+  :author:
+  """
 
-    def get_posX(self):
-        return self.posX
-    
-    def get_posY(self):
-        return self.posY
-    
-    def get_prize(self):
-        return self.prize
-    
-    def set_attack(self, attack):
-        self.attack = attack
+  """ ATTRIBUTES
 
-    def set_speed(self, speed):
-        self.speed = speed
+   
 
-    def set_posX(self, posX):
-        self.posX = posX
-    
-    def set_posY(self, posY):
-        self.posY = posY
+  hp  (private)
 
-    def set_prize(self, prize):
-        self.prize = prize
-    
-    def remove_Life(self, damage = 1):
-        self.life = self.life - damage
-        return self.life
-    
-    
+   
+
+  attack  (private)
+
+   
+
+  speed  (private)
+
+   
+
+  pos_x  (private)
+
+   
+
+  pos_y  (private)
+
+   
+
+  prize  (private)
+
+   
+
+  id  (private)
+
+  """
+
+  def __init__(self, hp = 100, attack = 1, speed = 10, posX = 0, posY = 0, prize = 1):
+    """
+     
+
+    @param int hp : 
+    @param int attack : 
+    @param int speed : 
+    @param float posX : 
+    @param float posY : 
+    @param int prize : 
+    @return  :
+    @author
+    """
+    self.hp = hp
+    self.attack = attack
+    self.speed = speed
+    self.posX = posX
+    self.posY = posY
+    self.prize = prize
+
+
+  def set_Damage(self, damage = 1):
+    """
+     
+
+    @param int damage : 
+    @return  :
+    @author
+    """
+    self.damage = damage
+
+
+  def get_Hp(self):
+    """
+     
+
+    @return  :
+    @author
+    """
+    return self.hp
+
+
+  def get_Attack(self):
+    """
+     
+
+    @return  :
+    @author
+    """
+    return self.attack
+
+
+  def get_Speed(self):
+    """
+     
+
+    @return  :
+    @author
+    """
+    return self.speed
+
+
+  def get_PosX(self):
+    """
+     
+
+    @return  :
+    @author
+    """
+    return self.posX
+
+
+  def get_PosY(self):
+    """
+     
+
+    @return  :
+    @author
+    """
+    return self.posY
+
+
+  def get_Prize(self):
+    """
+     
+
+    @return  :
+    @author
+    """
+    return self.prize
+
+
+
+
