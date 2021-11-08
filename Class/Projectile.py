@@ -8,26 +8,20 @@ class Projectile(object):
     self.pointB = pointB
     self.velocity = velocity
 
-
   def get_posX(self):
     return self.posX
-
 
   def get_posY(self):
     return self.posY
 
-
   def get_velocity(self):
     return self.velocity
-
 
   def set_direction(self, direction):
     self.direction = direction
 
-
   def get_opacity(self):
     return self.opacity
-
 
   def get_pointA(self):
     return self.pointA
@@ -38,7 +32,8 @@ class Projectile(object):
 
   def affiche(self): 
     print(self.posY, self.posX, self.pointA, self.pointB, self.opacity, self.velocity)
-
+  
 projectile1 = Projectile()
 projectile1.affiche()
 
+#kjdbcjkbw
