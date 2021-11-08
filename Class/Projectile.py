@@ -36,4 +36,4 @@ class Projectile(object):
 projectile1 = Projectile()
 projectile1.affiche()
 
-#kjdbcjkbw
+
