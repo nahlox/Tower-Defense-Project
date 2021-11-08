@@ -11,7 +11,6 @@ class Ennemi(object):
   def set_Damage(self, damage = 1):
     self.damage = damage
 
-
   def get_Hp(self):
     return self.hp
 
