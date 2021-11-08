@@ -7,7 +7,6 @@ class Ennemi(object):
     self.posY = posY
     self.prize = prize
     
-
   def set_Damage(self, damage = 1):
     self.damage = damage
 
@@ -22,18 +21,14 @@ class Ennemi(object):
   def get_Speed(self):
     return self.speed
 
-
   def get_PosX(self):
     return self.posX
-
 
   def get_PosY(self):
     return self.posY
 
-
   def get_Prize(self):
     return self.prize
-
 
   def affiche(self): 
     print(self.posX, self.hp, self.speed, self.posY, self.prize, self.attack)
