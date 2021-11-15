@@ -1,5 +1,10 @@
-class Tour(object):
+import pygame
+class Tour():
   def __init__(self, damage = 1, name = "", frequency = 1, range = 1, posX = 0, posY = 0, price = 5):
+    pygame.sprite.Sprite.__init__(self)
+    self.image = pygame.Surface([20, 50])
+    self.image.fill("red")
+    self.rect = self.image.get_rect()
     self.damage = damage
     self.name = name
     self.frequency = frequency
@@ -49,6 +54,3 @@ class Tour(object):
 
   def send_Projectile(self, id_Ennemi):
     pass
-
-
-
