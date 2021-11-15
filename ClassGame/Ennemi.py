@@ -12,11 +12,9 @@ class Ennemi(object):
 
   def get_Hp(self):
     return self.hp
-
-
+    
   def get_Attack(self):
     return self.attack
-
 
   def get_Speed(self):
     return self.speed
