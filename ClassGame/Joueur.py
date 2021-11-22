@@ -1,7 +1,9 @@
+import Tour
 class Joueur(object):
   def __init__(self, money = 100, life = 30):
     self.money = money
     self.life = life
+    self.towers = []
 
   def get_Money(self):
     return self.money
@@ -24,8 +26,11 @@ class Joueur(object):
     self.life = self.life - damage
 
   def create_tower(self, posX, posY):
+    if posX and posY : 
+      newTower = Tour.Tour(damage=2, name="Tour d'Archer", range=10, posX=posX, posY=posY)
+      self.towers = self.towers.append(newTower)
     pass
-
+  
   def next_Ennemi(self):
     pass
 
