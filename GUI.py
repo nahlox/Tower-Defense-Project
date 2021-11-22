@@ -4,7 +4,7 @@ pygame.init()
 width = 1000
 height = 500
 window = pygame.display.set_mode((width,height))
-bg_img = pygame.image.load('Assets/back_tower.jpeg')
+bg_img = pygame.image.load('Assets/map.jpg')
 bg_img = pygame.transform.scale(bg_img,(width,height))
  
 
