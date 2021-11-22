@@ -8,7 +8,7 @@ class Ennemi(object):
     self.prize = prize
     
   def set_Damage(self, damage = 1):
-    self.damage = damage
+    self.hp = self.hp - damage
 
   def get_Hp(self):
     return self.hp
