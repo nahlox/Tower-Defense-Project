@@ -1,4 +1,6 @@
 import pygame
+
+from ClassGame.Projectile import Projectile
 class Tour():
   def __init__(self, damage = 1, name = "", frequency = 1, range = 1, posX = 0, posY = 0, price = 5):
     pygame.sprite.Sprite.__init__(self)
@@ -53,4 +55,10 @@ class Tour():
     return self.posY
 
   def send_Projectile(self, id_Ennemi):
+    ennimi = Joueur.get_Ennemi(id_Ennemi)
+    test = Projectile()
+    
+# récuperer True or False de Ennemi 
+# if True/False => add money de Joueur
+# et remove ennemi de joueur 
     pass
