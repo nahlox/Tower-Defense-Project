@@ -7,6 +7,7 @@ class Ennemi(object):
     self.posY = posY
     self.prize = prize
     self.id = id
+    
   def set_Damage(self, damage = 1):
     self.hp -= damage
     if self.health <= 0:
