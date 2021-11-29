@@ -39,4 +39,3 @@ class Joueur(object):
 
 joueur1 = Joueur() 
 joueur1.affiche()
-
