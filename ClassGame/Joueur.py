@@ -1,3 +1,4 @@
+from ClassGame.Ennemi import Ennemi
 import Tour
 class Joueur(object):
   def __init__(self, money = 100, life = 30):
@@ -32,6 +33,9 @@ class Joueur(object):
       self.towers = self.towers.append(newTower)
     pass
   
+  def remove_Ennemi(self, id): 
+    self.ennemis.remove(Ennemi(id))
+
   def next_Ennemi(self):
     pass
 
