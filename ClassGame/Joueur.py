@@ -4,6 +4,7 @@ class Joueur(object):
     self.money = money
     self.life = life
     self.towers = []
+    self.ennemis = []
 
   def get_Money(self):
     return self.money
