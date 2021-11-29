@@ -42,5 +42,8 @@ class Joueur(object):
   def affiche(self):
     print(self.money, self.life)
 
+  def set_DamagetoEnnemi(self, ennemi, damage):
+    
+
 joueur1 = Joueur() 
 joueur1.affiche()

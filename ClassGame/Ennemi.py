@@ -1,5 +1,5 @@
 class Ennemi(object):
-  def __init__(self,  id, hp = 100, attack = 1, speed = 10, posX = 0, posY = 0, prize = 1):
+  def __init__(self, id, hp = 100, attack = 1, speed = 10, posX = 0, posY = 0, prize = 1):
     self.hp = hp
     self.attack = attack
     self.speed = speed
@@ -7,10 +7,10 @@ class Ennemi(object):
     self.posY = posY
     self.prize = prize
     self.id = id
-    
+
   def set_Damage(self, damage = 1):
     self.hp -= damage
-    if self.health <= 0:
+    if self.hp <= 0:
       return True 
     return False
 
