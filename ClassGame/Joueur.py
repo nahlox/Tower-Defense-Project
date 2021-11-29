@@ -34,7 +34,7 @@ class Joueur(object):
     pass
   
   def remove_Ennemi(self, id): 
-    self.ennemis.remove(Ennemi(id))
+    del self.ennemis[id]
 
   def next_Ennemi(self):
     pass
