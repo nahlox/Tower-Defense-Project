@@ -14,7 +14,10 @@ class Tour():
     self.posX = posX
     self.posY = posY
     self.price = price
-    
+  
+  def affiche(self):
+    print(self.name, self.damage, self.range, self.posX, self.posY)
+
   def get_Damage(self):
     return self.damage
 

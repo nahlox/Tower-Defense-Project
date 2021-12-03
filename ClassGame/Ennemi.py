@@ -34,6 +34,3 @@ class Ennemi(object):
 
   def affiche(self): 
     print(self.posX, self.hp, self.speed, self.posY, self.prize, self.attack)
-
-ennemi1 = Ennemi()
-ennemi1.affiche()
