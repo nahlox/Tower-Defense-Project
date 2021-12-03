@@ -6,12 +6,17 @@ from ClassGame.Tour import Tour
 
 #Tests 
 player = Joueur()
+vagueEnnemi = []
 player.create_tower(2, 5, "Tour test numero 1 ! ")
 player.create_tower(1, 4 , "Tour test 2 ! ")
 player.affiche()
+
 for tour in player.get_Towers():
     tour.affiche()
 
+for Ennemi in player.get_Ennemis():
+    print("test")
+    Ennemi.affiche
 # Game loop
 gameOn = True
 while gameOn:

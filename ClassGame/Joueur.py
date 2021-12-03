@@ -6,12 +6,16 @@ class Joueur(object):
     self.money = money
     self.life = life
     self.towers = []
+    self.vagueEnnemi = []
+    self.ennemisList = []
     self.ennemis = []
 
   def get_Towers(self):
     return self.towers
   def get_Money(self):
     return self.money
+  def get_Ennemis(self):
+    return self.ennemis
 
   def get_Life(self):
     return self.life
@@ -40,7 +44,12 @@ class Joueur(object):
     del self.ennemis[id]
 
   def next_Ennemi(self):
-    pass
+    if(len(self.ennemisList) > 0):
+      self.ennemis.append(self.ennemisList[0])
+      del self.ennemis[0]
+      return True
+    return False
+
 
   def affiche(self):
     print("Money & Life", self.money, self.life)
