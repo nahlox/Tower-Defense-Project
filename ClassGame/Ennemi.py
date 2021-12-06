@@ -1,14 +1,18 @@
 class Ennemi(object):
-  def __init__(self, hp = 100, attack = 1, speed = 10, posX = 0, posY = 0, prize = 1):
+  def __init__(self, id, hp = 100, attack = 1, speed = 10, posX = 0, posY = 0, prize = 1):
     self.hp = hp
     self.attack = attack
     self.speed = speed
     self.posX = posX
     self.posY = posY
     self.prize = prize
-    
+    self.id = id
+
   def set_Damage(self, damage = 1):
-    self.hp = self.hp - damage
+    self.hp -= damage
+    if self.hp <= 0:
+      return True 
+    return False
 
   def get_Hp(self):
     return self.hp
@@ -30,6 +34,3 @@ class Ennemi(object):
 
   def affiche(self): 
     print(self.posX, self.hp, self.speed, self.posY, self.prize, self.attack)
-
-ennemi1 = Ennemi()
-ennemi1.affiche()

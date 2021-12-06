@@ -31,7 +31,3 @@ class Projectile(object):
   def affiche(self): 
     print(self.posY, self.posX, self.pointA, self.pointB, self.opacity, self.velocity)
   
-projectile1 = Projectile()
-projectile1.affiche()
-
-
