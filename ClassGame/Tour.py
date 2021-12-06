@@ -1,4 +1,6 @@
 import pygame
+from ClassGame.Ennemi import Ennemi
+import Joueur
 
 from ClassGame.Projectile import Projectile
 class Tour():
@@ -58,10 +60,15 @@ class Tour():
     return self.posY
 
   def send_Projectile(self, id_Ennemi):
-    ennimi = Joueur.get_Ennemi(id_Ennemi)
-    test = Projectile()
-    
+    ennemi = Joueur.get_Ennemi(id_Ennemi)
+    test = Projectile(ennemi)
+    damage = Ennemi.set_Damage()
+    if damage == True:
+      Joueur.add_Money(self.prize)
+      Joueur.remove_Ennemi(ennemi)
+    else: 
+      pass
 # récuperer True or False de Ennemi 
 # if True/False => add money de Joueur
 # et remove ennemi de joueur 
-    pass
+    
