@@ -28,7 +28,7 @@ for tour in player.get_Towers():
     tour.affiche()
 
 # log des enemis 
-print(player.get_Ennemis())
+print(player.get_EnnemisList())
 for Ennemi in player.get_Ennemis():
     print("test")
     Ennemi.affiche
