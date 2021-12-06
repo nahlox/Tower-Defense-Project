@@ -62,25 +62,27 @@ class Tour():
   def isInRange(self, posA, posB):
     distance = ((posA[0] - posB[0]) ** 2 + (posA[1] - posB[1]) ** 2) ** 0.5
     if distance < self.range:
-      return True
+      return distance
     return False
 
   def search_ennemis(self, ennemisList):
     target = False
     posTour = [self.posX, self.posY]
     for ennemi in ennemisList:
-      if self.isInRange(posTour, [ennemi.get_PosX(), ennemi.get_PosY()]):
+      distanceInRange = self.isInRange(posTour, [ennemi.get_PosX(), ennemi.get_PosY()])
+      if distanceInRange:
         if not target:
-          target = ennemi
-        elif target.get_distance() < ennemi.get_distance():
-          target = ennemi
+          target = [ennemi, distanceInRange]
+        elif target[0].get_distance() < ennemi.get_distance():
+          target = [ennemi, distanceInRange]
     if target:
-      projectileSend = self.send_Projectile(self, ennemi)
+      projectileSend = self.send_Projectile(self, target[0], target[1])
       return projectileSend
 
   def send_Projectile(self, ennemi):
     projectile = Projectile(opacity = 1, posX = self.posX, posY = self.posY, pointA = ennemi.get_PosX(), pointB = ennemi.get_PosY())
     damage = ennemi.set_Damage()
+    if damage == False : return False
     return damage
 # récuperer True or False de Ennemi 
 # if True/False => add money de Joueur
