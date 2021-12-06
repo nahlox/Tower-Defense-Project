@@ -58,6 +58,9 @@ class Tour():
 
   def get_PosY(self):
     return self.posY
+  
+  def search_ennemis(self, ennemisList):
+
 
   def send_Projectile(self, id_Ennemi):
     ennemi = Joueur.get_Ennemi(id_Ennemi)
