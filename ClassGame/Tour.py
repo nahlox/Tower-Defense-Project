@@ -64,7 +64,7 @@ class Tour():
     test = Projectile(ennemi)
     damage = Ennemi.set_Damage()
     if damage == True:
-      Joueur.add_Money(self.prize)
+      Joueur.add_Money(ennemi.get_Prize())
       Joueur.remove_Ennemi(ennemi)
     else: 
       pass
