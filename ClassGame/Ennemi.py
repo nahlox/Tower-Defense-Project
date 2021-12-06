@@ -8,6 +8,8 @@ class Ennemi(object):
     self.prize = prize
     self.id = id
     self.distanceParcourue = 0
+    self.turningpoints = []
+    
 
   def set_Damage(self, damage = 1):
     self.hp -= damage
