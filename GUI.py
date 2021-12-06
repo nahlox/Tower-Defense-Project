@@ -1,77 +1,39 @@
+
 import pygame
-import sys
+import pygame_menu
+from pygame.locals import *
 
-
-# initializing the constructor
 pygame.init()
+width = 1000
+height = 500
+window = pygame.display.set_mode((width,height))
+bg_img = pygame.image.load('Assets/map.jpg')
+bg_img = pygame.transform.scale(bg_img,(width,height))
+i = 0
+surface = pygame.display.set_mode((600, 400))
+def set_difficulty(value, difficulty):
+    # Do the job here !
+    pass
 
-# screen resolution
-res = (720,720)
+def start_the_game():
+    # Do the job here !
+    pass
 
-# opens up a window
-screen = pygame.display.set_mode(res)
+menu = pygame_menu.Menu('Welcome', 400, 300,
+                       theme=pygame_menu.themes.THEME_BLUE)
 
-# white color
-color = (255,255,255)
+menu.add.text_input('Name :', default='John Doe')
+menu.add.selector('Difficulty :', [('Hard', 1), ('Easy', 2)], onchange=set_difficulty)
+menu.add.button('Play', start_the_game)
+menu.add.button('Quit', pygame_menu.events.EXIT)
 
-# light shade of the button
-color_light = (170,170,170)
-
-# dark shade of the button
-color_dark = (100,100,100)
-
-# stores the width of the
-# screen into a variable
-width = screen.get_width()
-
-# stores the height of the
-# screen into a variable
-height = screen.get_height()
-
-# defining a font
-smallfont = pygame.font.SysFont('Corbel',35)
-
-# rendering a text written in
-# this font
-quit = smallfont.render('QUIT' , True , color)
-play = smallfont.render('play' , True , color)
-
-while True:
-	
-	for ev in pygame.event.get():
-		
-		if ev.type == pygame.QUIT:
-			pygame.quit()
-			
-		#checks if a mouse is clicked
-		if ev.type == pygame.MOUSEBUTTONDOWN:
-			
-			#if the mouse is clicked on the
-			# button the game is terminated
-			if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40:
-				pygame.quit()
-				
-	# fills the screen with a color
-	screen.fill((60,25,60))
-	
-	# stores the (x,y) coordinates into
-	# the variable as a tuple
-	mouse = pygame.mouse.get_pos()
-	
-	# if mouse is hovered on a button it
-	# changes to lighter shade
-	if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40:
-		pygame.draw.rect(screen,color_light,[width/2,height/2,140,40])
-		
-	else:
-		pygame.draw.rect(screen,color_dark,[width/2,height/2,140,40])
-	
-	# superimposing the text onto our button
-	screen.blit(quit , (width/2+50,height/2))
- 
-    
-	
-	# updates the frames of the game
-	pygame.display.update()
-
-
+runing = True
+while runing:
+    window.fill((0,0,0))
+    window.blit(bg_img,(i,0))
+    menu.mainloop(window)
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            runing = False
+    pygame.display.update()
+pygame.quit()
