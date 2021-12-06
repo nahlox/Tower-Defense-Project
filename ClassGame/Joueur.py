@@ -17,9 +17,20 @@ class Joueur(object):
   def get_Ennemis(self):
     return self.ennemis
 
+  def get_EnnemisList(self):
+    return self.ennemisList
   def get_Life(self):
     return self.life
 
+  def add_Enemmi(self, ennemis):
+    if type(ennemis) == str:
+      entity = Ennemi(id = len(self.ennemisList))
+      self.ennemisList.append(entity)
+      return
+    for ennemi in ennemis:
+      entity = Ennemi(id = len(self.ennemisList))
+      self.ennemisList.append(entity)
+  
   def add_Money(self, prize = 0):
     self.money = self.money + prize
     return self.money
