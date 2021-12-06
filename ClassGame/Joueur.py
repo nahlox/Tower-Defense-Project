@@ -57,7 +57,7 @@ class Joueur(object):
   def next_Ennemi(self):
     if(len(self.ennemisList) > 0):
       self.ennemis.append(self.ennemisList[0])
-      del self.ennemis[0]
+      del self.ennemisList[0]
       return True
     return False
 
