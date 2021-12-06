@@ -7,13 +7,16 @@ class Ennemi(object):
     self.posY = posY
     self.prize = prize
     self.id = id
+    self.distanceParcourue = 0
 
   def set_Damage(self, damage = 1):
     self.hp -= damage
     if self.hp <= 0:
       return True 
     return False
-
+  
+  def get_distance(self):
+    return self.distanceParcourue
   def get_Hp(self):
     return self.hp
     
