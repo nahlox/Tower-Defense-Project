@@ -63,9 +63,10 @@ class Joueur(object):
 
   def SendProjectilesOnEnnemis(self):
     for tour in self.towers:
-      shot = tour.search_ennemis()
-      if shot != False:
-        self.add_Money(shot)
+      shot = tour.search_ennemis(self.get_Ennemis())
+      if shot != False: #Si le shot touche un ennemi
+        self.add_Money(shot) #On donne de l'argent au joueur
+        print(shot)
 
   def affiche(self):
     print("Money & Life", self.money, self.life)

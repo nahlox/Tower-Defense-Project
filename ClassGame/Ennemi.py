@@ -39,3 +39,6 @@ class Ennemi(object):
 
   def affiche(self): 
     print(self.posX, self.hp, self.speed, self.posY, self.prize, self.attack)
+
+  def logEverything(self):
+    print("MESSAGE FROM ennemi n°", self.id, ": Still alive (",self.posX, ",", self.posY, ")", self.hp)

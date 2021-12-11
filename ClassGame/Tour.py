@@ -1,7 +1,5 @@
 import pygame
 from ClassGame.Ennemi import Ennemi
-import Joueur
-
 from ClassGame.Projectile import Projectile
 class Tour():
   def __init__(self, damage = 1, name = "", frequency = 1, range = 1, posX = 0, posY = 0, price = 5):
@@ -65,6 +63,12 @@ class Tour():
       return distance
     return False
 
+  def send_Projectile(self, target):
+    print("PROJECTILE CREATED")
+    projectile = Projectile(opacity = 1, posX = self.posX, posY = self.posY, pointA = target.get_PosX(), pointB = target.get_PosY())
+    damage = target.set_Damage()
+    return damage
+  
   def search_ennemis(self, ennemisList):
     target = False
     posTour = [self.posX, self.posY]
@@ -76,14 +80,12 @@ class Tour():
         elif target[0].get_distance() < ennemi.get_distance():
           target = [ennemi, distanceInRange]
     if target:
-      projectileSend = self.send_Projectile(self, target[0], target[1])
-      return projectileSend
+      print("TARGET FOUND : ", target[0], target[0].get_PosX())
+      return self.send_Projectile(target[0])
+    print("MESSAGE FROM", self.name, "NO TARGET FOUND (", self.posX, ",", self.posY, ")")
+    return False
 
-  def send_Projectile(self, ennemi):
-    projectile = Projectile(opacity = 1, posX = self.posX, posY = self.posY, pointA = ennemi.get_PosX(), pointB = ennemi.get_PosY())
-    damage = ennemi.set_Damage()
-    if damage == False : return False
-    return damage
+  
 # récuperer True or False de Ennemi 
 # if True/False => add money de Joueur
 # et remove ennemi de joueur 
