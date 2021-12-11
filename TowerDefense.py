@@ -15,10 +15,10 @@ vagueEnnemi = ["1", "2", "3", "2", "1", "1"] # 3 types d'ennemis
 player.add_Enemmi(vagueEnnemi)
 
 # Creation d'une tour
-player.create_tower(2, 5, "Tour test numero 1 ! ", range=2)
+player.create_tower(2, 5, "Super Tour", range=5)
 
 # Creation d'une deuxième tour
-player.create_tower(1, 4 , "Tour test 2 ! ", range=10)
+player.create_tower(1, 4 , "Tour d'archer", range=5)
 
 # Log du joueur
 player.affiche()
@@ -45,7 +45,9 @@ while gameOn:
             player.SendProjectilesOnEnnemis()  #On les recherche avec chaque tour et on tire
             for ennemi in player.get_Ennemis(): # LOG
                 ennemi.logEverything()
+                ennemi.walk()
             for ennemi in player.get_EnnemisList(): #LOG
+                print("Not on map", end=" ")
                 ennemi.logEverything() 
             sleep(0.2)
             

@@ -19,6 +19,21 @@ class Ennemi(object):
   
   def get_distance(self):
     return self.distanceParcourue
+
+  def walk(self):
+    # Faire un appel à la map en indiquant la position, la map doit lui renvoyer la direction à prendre (right / left / up / down)
+    direction = "right"
+    if direction == "right":
+      self.posX = self.posX + 0.01 * self.speed
+    elif direction == "left":
+      self.posX = self.posX - 0.01 * self.speed
+    elif direction == "up":
+      self.posY = self.posY + 0.01 * self.speed
+    else:
+      self.posY = self.posY - 0.01 * self.speed
+    self.distanceParcourue = self.distanceParcourue + 0.01 * self.speed
+    
+    pass
   def get_Hp(self):
     return self.hp
     
@@ -36,9 +51,12 @@ class Ennemi(object):
 
   def get_Prize(self):
     return self.prize
+  
+  def get_Id(self):
+    return self.id
 
   def affiche(self): 
     print(self.posX, self.hp, self.speed, self.posY, self.prize, self.attack)
 
   def logEverything(self):
-    print("MESSAGE FROM ennemi n°", self.id, ": Still alive (",self.posX, ",", self.posY, ")", self.hp)
+    print("MESSAGE FROM ennemi n°", self.id, ": Still alive (", round(self.posX, 2), ",", round(self.posY, 2), ") hp :", self.hp)
