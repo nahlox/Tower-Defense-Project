@@ -80,7 +80,7 @@ class Tour():
         elif target[0].get_distance() < ennemi.get_distance():
           target = [ennemi, distanceInRange]
     if target:
-      print("TARGET FOUND : ", target[0], target[0].get_PosX())
+      print("MESSAGE FROM", self.name, "TARGET FOUND : ", target[0], target[0].get_PosX())
       return self.send_Projectile(target[0])
     print("MESSAGE FROM", self.name, "NO TARGET FOUND (", self.posX, ",", self.posY, ")")
     return False
