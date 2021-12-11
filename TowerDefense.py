@@ -43,12 +43,12 @@ while gameOn:
     while len(player.get_EnnemisList()) != 0 or len(player.get_Ennemis()) != 0:
         if len(player.get_Ennemis()) != 0: #Si il y a des ennemis sur le plateau
             player.SendProjectilesOnEnnemis()  #On les recherche avec chaque tour et on tire
-            for ennemi in player.get_Ennemis():
+            for ennemi in player.get_Ennemis(): # LOG
                 ennemi.logEverything()
-            for ennemi in player.get_EnnemisList():
-                ennemi.logEverything()
+            for ennemi in player.get_EnnemisList(): #LOG
+                ennemi.logEverything() 
             sleep(0.2)
-
+            
         
     gameOn = False
 
