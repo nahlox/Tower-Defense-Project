@@ -37,15 +37,38 @@ fenetre = pygame.display.set_mode((750, 750))
 background = pygame.Surface(fenetre.get_size())
 
 
-def render():
-    
-    for ennemi in player.get_Ennemis():
-        pygame.draw.circle(fenetre, (255, 200, 255), (ennemi.get_PosX(), ennemi.get_PosY()), 10)
 
 def update():
     pygame.display.flip()
     clock.tick(100)
 
+def drawMap():
+    green = (40,255,30)
+    brown = (87, 49, 49)
+    blue =  (0, 22, 219)
+    yellow = (184, 181, 55)
+    black = (0, 0, 0)
+
+    # -1 = Nothing
+    # 0 = herbe
+    # 1 = Pierre de départ
+    # 2 = Chemin
+    # 3 = Pont
+    # 4 = Eau
+    # 5 = Tour d'arrivée
+
+    colors = [green, black, yellow, brown, blue, black]
+    TILESIZE = 50
+    activeMap = player.get_map().get_mapModel()
+
+    for i in range(0, len(activeMap)):
+        for j in range(0, len(activeMap[i])):
+            pygame.draw.rect(fenetre, colors[activeMap[i][j]], pygame.Rect(j * TILESIZE, i*TILESIZE, TILESIZE, TILESIZE))
+
+def render():
+    drawMap()
+    for ennemi in player.get_Ennemis():
+        pygame.draw.circle(fenetre, (255, 200, 255), (ennemi.get_PosX(), ennemi.get_PosY()), 10)
 
 while gameOn:
     # loop

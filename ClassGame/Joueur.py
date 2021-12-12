@@ -1,6 +1,5 @@
 from ClassGame.Ennemi import Ennemi
 from ClassGame.Tour import Tour
-from ClassGame.ClassMap import Map
 class Joueur(object):
   def __init__(self, map, money = 100, life = 30 ):
     self.money = money

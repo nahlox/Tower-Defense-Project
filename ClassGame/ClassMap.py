@@ -3,6 +3,8 @@ class Map(object):
         self.map = map_model
         self.name = name
     
+    def get_mapModel(self):
+        return self.map
     def get_Direction(self,  x, y, actualdirection = "right"):
         directions = ["up", "down", "left", "right"]
         opositDirections = ["down", "up", "right", "left" ]
@@ -52,41 +54,3 @@ class Map(object):
 
         return up, down, left, right
 
-from pygame.locals import *
-import pygame, sys
-
-green = (40,255,30)
-brown = (40,60,90)
-blue =  (150, 25, 0, 20)
-yellow = (0,155,155)
-
-grass = 0
-dirt = 1
-water = 2
-bridge = 3
-
-colours = {
-    grass: green,
-    dirt: yellow,
-    water: blue,
-    bridge : brown,
-    }
-
-
-TILESIZE = 50
-MAPWIDTH =  750
-MAPHEIGHT = 750
-
-pygame.init()
-DISPLAYSURF = pygame.display.set_mode((MAPWIDTH*TILESIZE,MAPHEIGHT*TILESIZE))
-while True:
-
-
-    for event in pygame.event.get():
-        if event.type == QUIT:
-            pygame.quit()
-
-        
-
-
-    pygame.display.update()
