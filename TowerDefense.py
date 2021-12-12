@@ -13,7 +13,7 @@ pygame.init()
 # Init de clock
 clock = pygame.time.Clock()
 
-CIEL = 0, 200, 255  # parenthèses inutiles, l'interpréteur reconnaît un tuple
+BLACK = 255, 255, 255  # parenthèses inutiles, l'interpréteur reconnaît un tuple
 
 # Creation de la map
 gameMap = Map(map_test, "Level 1")
@@ -44,13 +44,13 @@ def render():
 
 def update():
     pygame.display.flip()
-    clock.tick(1000)
+    clock.tick(100)
 
 
 while gameOn:
     # loop
     # Création d'une image de la taille de la fenêtre
-    background.fill(CIEL)
+    background.fill(BLACK)
     fenetre.blit(background, (0, 0))
     while (len(player.get_EnnemisList()) != 0 or len(player.get_Ennemis()) != 0) and gameOn:
         if len(player.get_Ennemis()) != 0: #Si il y a des ennemis sur le plateau

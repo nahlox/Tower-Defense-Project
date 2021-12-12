@@ -4,12 +4,16 @@ class Map(object):
         self.name = name
     
     def get_Direction(self,  x, y, actualdirection = "right"):
+        directions = ["up", "down", "left", "right"]
+        opositDirections = ["down", "up", "right", "left" ]
+
         #x est entre 0 et 750
         #y est entre 
         column = x // 50
         row = y // 50
         columnRest = x % 50
         rowRest = y % 50
+
         if column > 15:
             column = 15
         if row > 15:
@@ -25,8 +29,6 @@ class Map(object):
             return actualdirection
         
         stuffArround = self.locateAround(row, column)
-        directions = ["up", "down", "left", "right"]
-        opositDirections = ["down", "up", "right", "left" ]
         for direction in directions:
             if direction != opositDirections[directions.index(actualdirection)] and stuffArround[directions.index(direction)] not in [0, -1, 4]:
                 return direction
