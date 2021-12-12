@@ -53,7 +53,9 @@ class Joueur(object):
     self.towers.append(newTower)
   
   def remove_Ennemi(self, id): 
-    del self.ennemis[id]
+    del self.ennemis[0]
+    self.next_Ennemi()
+    self.next_Ennemi()
 
   def next_Ennemi(self):
     if(len(self.ennemisList) > 0):
@@ -67,7 +69,8 @@ class Joueur(object):
       shot = tour.search_ennemis(self.get_Ennemis())
       if shot != False: #Si le shot touche un ennemi
         self.add_Money(shot) #On donne de l'argent au joueur
-        print(shot)
+        print("SHOT", shot)
+        self.remove_Ennemi(shot)
 
   def affiche(self):
     print("Money & Life", self.money, self.life)

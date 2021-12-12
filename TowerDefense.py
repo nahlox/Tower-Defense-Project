@@ -14,7 +14,7 @@ pygame.init()
 clock = pygame.time.Clock()
 
 BLACK = 255, 255, 255  # parenthèses inutiles, l'interpréteur reconnaît un tuple
-
+TILESIZE = 50
 # Creation de la map
 gameMap = Map(map_test, "Level 1")
 # Creation d'un joueur
@@ -24,9 +24,9 @@ vagueEnnemi = ["1", "2", "3", "2", "1", "1"] # 3 types d'ennemis
 # On ajoute les ennemis a la liste d'ennemie du joueur :
 player.add_Enemmi(vagueEnnemi)
 # Creation d'une tour
-player.create_tower(2, 5, "Super Tour", range=5)
+player.create_tower(5 * TILESIZE - 25, 3 * TILESIZE - 25, "Super Tour", range = 3 * TILESIZE)
 # Creation d'une deuxième tour
-player.create_tower(1, 4 , "Tour d'archer", range=5)
+player.create_tower(12 * TILESIZE - 25, 3 * TILESIZE - 25 , "Tour d'archer", range = 3 * TILESIZE)
 # Log du joueur
 player.affiche()
 player.next_Ennemi()
@@ -48,7 +48,7 @@ def drawMap():
     blue =  (0, 22, 219)
     yellow = (184, 181, 55)
     black = (0, 0, 0)
-
+    red = (255, 13, 0)
     # -1 = Nothing
     # 0 = herbe
     # 1 = Pierre de départ
@@ -58,17 +58,19 @@ def drawMap():
     # 5 = Tour d'arrivée
 
     colors = [green, black, yellow, brown, blue, black]
-    TILESIZE = 50
+    
     activeMap = player.get_map().get_mapModel()
 
     for i in range(0, len(activeMap)):
         for j in range(0, len(activeMap[i])):
             pygame.draw.rect(fenetre, colors[activeMap[i][j]], pygame.Rect(j * TILESIZE, i*TILESIZE, TILESIZE, TILESIZE))
+    for towers in player.get_Towers():
+        pygame.draw.circle(fenetre, black, (towers.get_PosX(), towers.get_PosY()), TILESIZE/4)
 
 def render():
     drawMap()
     for ennemi in player.get_Ennemis():
-        pygame.draw.circle(fenetre, (255, 200, 255), (ennemi.get_PosX(), ennemi.get_PosY()), 10)
+        pygame.draw.circle(fenetre, (120, 120, 120), (ennemi.get_PosX(), ennemi.get_PosY()), 10)
 
 while gameOn:
     # loop
