@@ -1,10 +1,11 @@
 class Ennemi(object):
-  def __init__(self, id, hp = 100, attack = 1, speed = 10, posX = 0, posY = 0, prize = 1):
+  def __init__(self, id, hp = 100, attack = 1, speed = 10, posX = 0, posY = 0, prize = 1, direction = "right"):
     self.hp = hp
     self.attack = attack
     self.speed = speed
     self.posX = posX
     self.posY = posY
+    self.direction = direction
     self.prize = prize
     self.id = id
     self.distanceParcourue = 0
@@ -20,17 +21,17 @@ class Ennemi(object):
   def get_distance(self):
     return self.distanceParcourue
 
-  def walk(self):
+  def walk(self, map):
     # Faire un appel à la map en indiquant la position, la map doit lui renvoyer la direction à prendre (right / left / up / down)
-    direction = "right"
-    if direction == "right":
-      self.posX = self.posX + 0.01 * self.speed
-    elif direction == "left":
-      self.posX = self.posX - 0.01 * self.speed
-    elif direction == "up":
-      self.posY = self.posY + 0.01 * self.speed
+    self.direction = map.get_Direction(self.posX, self.posY, self.direction)
+    if self.direction == "right":
+      self.posX = self.posX + 0.1 * self.speed
+    elif self.direction == "left":
+      self.posX = self.posX - 0.1 * self.speed
+    elif self.direction == "up":
+      self.posY = self.posY + 0.1 * self.speed
     else:
-      self.posY = self.posY - 0.01 * self.speed
+      self.posY = self.posY - 0.1 * self.speed
     self.distanceParcourue = self.distanceParcourue + 0.01 * self.speed
     
     pass

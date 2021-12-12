@@ -17,12 +17,18 @@ map_blank = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 ]
 
+# -1 = Nothing
 # 0 = herbe
 # 1 = Pierre de départ
 # 2 = Chemin
 # 3 = Pont
 # 4 = Eau
 # 5 = Tour d'arrivée
+
+#Taille d'une case : 50 x 50
+#Plateau = 750 x 750
+
+
 map_test = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0],
@@ -41,7 +47,5 @@ map_test = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 ]
 
-class Map(object):
-    def ___init__(self, map_model, name):
-        self.map = map_model
-        self.name = name
+def theMap():
+    return map_test

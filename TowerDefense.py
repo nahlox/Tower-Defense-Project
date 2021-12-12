@@ -4,9 +4,12 @@ from ClassGame.Joueur import Joueur
 from ClassGame.Ennemi import Ennemi
 from ClassGame.Projectile import Projectile
 from ClassGame.Tour import Tour
-
+from ClassGame.mapBrouillon import map_test
+from ClassGame.ClassMap import Map
+# Creation de la map
+gameMap = Map(map_test, "Level 1")
 # Creation d'un joueur
-player = Joueur()
+player = Joueur(gameMap)
 
 # Vague d'ennemis
 vagueEnnemi = ["1", "2", "3", "2", "1", "1"] # 3 types d'ennemis
@@ -45,11 +48,11 @@ while gameOn:
             player.SendProjectilesOnEnnemis()  #On les recherche avec chaque tour et on tire
             for ennemi in player.get_Ennemis(): # LOG
                 ennemi.logEverything()
-                ennemi.walk()
+                ennemi.walk(player.get_map())
             for ennemi in player.get_EnnemisList(): #LOG
                 print("Not on map", end=" ")
                 ennemi.logEverything() 
-            sleep(0.2)
+            sleep(0.01)
             
         
     gameOn = False
