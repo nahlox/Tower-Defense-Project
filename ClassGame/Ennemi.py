@@ -29,9 +29,9 @@ class Ennemi(object):
     elif self.direction == "left":
       self.posX = self.posX - 0.1 * self.speed
     elif self.direction == "up":
-      self.posY = self.posY + 0.1 * self.speed
-    else:
       self.posY = self.posY - 0.1 * self.speed
+    elif self.direction == "down":
+      self.posY = self.posY + 0.1 * self.speed
     self.distanceParcourue = self.distanceParcourue + 0.01 * self.speed
     
     pass
