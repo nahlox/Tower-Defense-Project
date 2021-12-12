@@ -20,7 +20,7 @@ gameMap = Map(map_test, "Level 1")
 # Creation d'un joueur
 player = Joueur(gameMap)
 # Vague d'ennemis
-vagueEnnemi = ["1", "2", "3", "2", "1", "1"] # 3 types d'ennemis
+vagueEnnemi = ["1", "2", "3", "2", "1", "1","1", "2", "3", "2", "1", "1","1", "2", "3", "2", "1", "1",] # 3 types d'ennemis
 # On ajoute les ennemis a la liste d'ennemie du joueur :
 player.add_Enemmi(vagueEnnemi)
 # Creation d'une tour
@@ -66,6 +66,7 @@ def drawMap():
             pygame.draw.rect(fenetre, colors[activeMap[i][j]], pygame.Rect(j * TILESIZE, i*TILESIZE, TILESIZE, TILESIZE))
     for towers in player.get_Towers():
         pygame.draw.circle(fenetre, black, (towers.get_PosX(), towers.get_PosY()), TILESIZE/4)
+        
 
 def render():
     drawMap()
