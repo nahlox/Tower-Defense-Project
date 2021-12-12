@@ -1,6 +1,7 @@
 from pygame.locals import *
 import pygame, sys
 
+#couleurs
 green = (40,255,30)
 brown = (40,60,90)
 blue =  (150, 25, 0, 20)
