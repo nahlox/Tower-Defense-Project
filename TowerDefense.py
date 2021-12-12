@@ -38,21 +38,21 @@ background = pygame.Surface(fenetre.get_size())
 
 
 def render():
-    background.fill(CIEL)
-    fenetre.blit(background, (0, 0))
+    
     for ennemi in player.get_Ennemis():
         pygame.draw.circle(fenetre, (255, 200, 255), (ennemi.get_PosX(), ennemi.get_PosY()), 10)
 
 def update():
     pygame.display.flip()
-    clock.tick(100)
+    clock.tick(1000)
 
 
 while gameOn:
     # loop
     # Création d'une image de la taille de la fenêtre
-    
-    while len(player.get_EnnemisList()) != 0 or len(player.get_Ennemis()) != 0:
+    background.fill(CIEL)
+    fenetre.blit(background, (0, 0))
+    while (len(player.get_EnnemisList()) != 0 or len(player.get_Ennemis()) != 0) and gameOn:
         if len(player.get_Ennemis()) != 0: #Si il y a des ennemis sur le plateau
             player.SendProjectilesOnEnnemis()  #On les recherche avec chaque tour et on tire
             for ennemi in player.get_Ennemis(): # LOG
