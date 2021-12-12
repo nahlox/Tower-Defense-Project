@@ -1,22 +1,24 @@
-from pygame.constants import CONTROLLER_AXIS_LEFTX
 from ClassGame.Ennemi import Ennemi
 from ClassGame.Tour import Tour
+from ClassGame.ClassMap import Map
 class Joueur(object):
-  def __init__(self, money = 100, life = 30):
+  def __init__(self, map, money = 100, life = 30 ):
     self.money = money
     self.life = life
+    self.map = map
     self.towers = []
     self.vagueEnnemi = []
     self.ennemisList = []
     self.ennemis = []
-
+    
   def get_Towers(self):
     return self.towers
   def get_Money(self):
     return self.money
   def get_Ennemis(self):
     return self.ennemis
-
+  def get_map(self):
+    return self.map
   def get_EnnemisList(self):
     return self.ennemisList
   def get_Life(self):
@@ -61,6 +63,12 @@ class Joueur(object):
       return True
     return False
 
+  def SendProjectilesOnEnnemis(self):
+    for tour in self.towers:
+      shot = tour.search_ennemis(self.get_Ennemis())
+      if shot != False: #Si le shot touche un ennemi
+        self.add_Money(shot) #On donne de l'argent au joueur
+        print(shot)
 
   def affiche(self):
     print("Money & Life", self.money, self.life)
