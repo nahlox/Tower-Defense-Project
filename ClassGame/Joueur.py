@@ -1,5 +1,7 @@
+from time import sleep
 from ClassGame.Ennemi import Ennemi
 from ClassGame.Tour import Tour
+import random
 class Joueur(object):
   def __init__(self, map, money = 100, life = 30 ):
     self.money = money
@@ -33,6 +35,7 @@ class Joueur(object):
       self.ennemisList.append(entity)
   
   def add_Money(self, prize = 0):
+    
     self.money = self.money + prize
     return self.money
 
@@ -55,10 +58,12 @@ class Joueur(object):
   def remove_Ennemi(self, id): 
     del self.ennemis[0]
     self.next_Ennemi()
-    self.next_Ennemi()
+    self.next_Ennemi(30 + random.randint(0, 50))
 
-  def next_Ennemi(self):
+
+  def next_Ennemi(self, delay = 0):
     if(len(self.ennemisList) > 0):
+      self.ennemisList[0].set_Delay(delay)
       self.ennemis.append(self.ennemisList[0])
       del self.ennemisList[0]
       return True

@@ -11,7 +11,7 @@ class Ennemi(object):
     self.distanceParcourue = 0
     self.turningpoints = []
     self.distanceSinceLastDirectionCheck = 50
-    
+    self.delay = 0
 
   def set_Damage(self, damage = 1):
     self.hp -= damage
@@ -19,6 +19,10 @@ class Ennemi(object):
       return self.prize 
     return False
   
+  def set_Delay(self, delay):
+    self.delay = delay
+  def get_Delay(self):
+    return self.delay
   def get_distance(self):
     return self.distanceParcourue
 
