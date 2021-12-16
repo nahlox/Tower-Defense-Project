@@ -1,6 +1,0 @@
-Organisation: 
-
-Fenêtre graphique : Rawad + 
-Modèle : 
-
-Objectif : S'occuper du modèle en premier
